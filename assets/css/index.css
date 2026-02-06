@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    text-align: center;
+}
+
+.table-container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+thead {
+    text-align: center;
+}
+
+table,
+td {
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+    margin: 15px;
+}
