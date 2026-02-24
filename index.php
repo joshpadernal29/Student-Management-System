@@ -40,7 +40,7 @@ mysqli_close($conn);
     <main>
         <div class="container mt-2">
             <h2>Student List</h2>
-            <button type="button" class="btn btn-primary">+ Add Student</button>
+            <a class="btn btn-primary" href="addStudent.php">+ Add Student</a>
         </div>
         <hr>
         <div class="container">
