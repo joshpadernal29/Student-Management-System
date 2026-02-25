@@ -55,15 +55,15 @@ mysqli_close($conn);
                 <tbody> 
                     <!--php for each loop-->
                     <?php foreach($students as $student): ?>
-                    <tr>
+                    <tr>  
                         <th><?php echo $student['student_id']?></th>
                         <th><?php echo $student['first_name'] . " " . $student['last_name']?></th>
                         <th><?php echo $student['course']?></th>
                         <th><?php echo $student['level']?></th>
                         <th>
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-primary">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <a class="btn btn-primary" href="EditStudent.php?id=<?php echo $student['id'];?> name="edit_student_info">Edit</a>
+                                <a class="btn btn-danger"  href="#">Delete</a>
                             </div>
                         </th>
                     </tr>
