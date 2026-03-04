@@ -41,8 +41,8 @@ include("action/edit.php");
                             <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
                                 name="edit_course" value="<?php echo $student['course']; ?>">
                                 <option value="BSIT" <?= ($student['course'] == 'BSIT') ? 'selected' : '' ?>>BSIT</option>
-                                <option value="BSIT" <?= ($student['course'] == 'BSCS') ? 'selected' : '' ?>>BSCS</option>
-                                <option value="BSIT" <?= ($student['course'] == 'BSHM') ? 'selected' : '' ?>>BSHM</option>
+                                <option value="BSCS" <?= ($student['course'] == 'BSCS') ? 'selected' : '' ?>>BSCS</option>
+                                <option value="BSHM" <?= ($student['course'] == 'BSHM') ? 'selected' : '' ?>>BSHM</option>
                             </select>
                             <label for="floatingSelect">Course</label>
                         </div>

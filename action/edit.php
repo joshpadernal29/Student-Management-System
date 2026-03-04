@@ -1,7 +1,8 @@
 <?php
-require("config/database.php");
+// absolute  file path
+require __DIR__. "/../config/database.php";
     
-    // get id and parse to int
+    // get id and parse to int (populate student info)
     $sId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
    if ($sId > 0) {
@@ -19,13 +20,33 @@ require("config/database.php");
         $student = mysqli_fetch_assoc($result);
         // close query
         mysqli_stmt_close($getData);
-        // close connection
-        mysqli_close($conn);
-   } else {
-        die("student not found!");
    }
 
-    // update data
+    // update student data
     if (isset($_POST['update_student'])) {
-        // logic later
+          // intialize student data variables
+          $id = $_POST['id'];
+          $student_id = $_POST['edit_student_id'];
+          $first_name = $_POST['edit_first_name'];
+          $last_name = $_POST['edit_last_name'];
+          $course = $_POST['edit_course'];
+          $level = $_POST['edit_level'];
+     
+          // query updated data to db
+          $sqlUpdate = "UPDATE students SET student_id = ?, first_name = ?, last_name = ?,
+                      course = ?, level = ? WHERE id = ?";
+          $updatedData = mysqli_prepare($conn, $sqlUpdate);
+          
+          mysqli_stmt_bind_param($updatedData, 'sssssi',$student_id,$first_name,$last_name,$course,$level,$id);
+
+          mysqli_stmt_execute($updatedData);
+
+          mysqli_stmt_close($updatedData);
+
+          // after updating data redirect back to index
+          header("Location: /../index.php");
     }
+
+// close connection
+mysqli_close($conn);
+
