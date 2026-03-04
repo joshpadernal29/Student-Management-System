@@ -3,10 +3,17 @@
 require __DIR__. "/../config/database.php";
     
     // get id and parse to int (populate student info)
-    $sId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+     if (isset($_GET['id'])) {
+          $sId = (int)$_GET['id'];
+     } else {
+          $sId = 0;
+     }
 
-   if ($sId > 0) {
-        // get student info based on the id
+     // redirect to index if id = 0 (unable to access editstudent page via url)
+     if ($sId == 0) {
+          header("Location: ../index.php");
+     } else {
+     // get student info based on the id
         $sqlGet = "SELECT * FROM students WHERE id = ?";
         // prepare 
         $getData = mysqli_prepare($conn,$sqlGet);
