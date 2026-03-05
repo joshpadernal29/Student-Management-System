@@ -63,7 +63,7 @@ mysqli_close($conn);
                         <th>
                             <div class="btn-group" role="group">
                                 <a class="btn btn-primary" href="EditStudent.php?id=<?php echo $student['id'];?> name="edit_student_info">Edit</a>
-                                <a class="btn btn-danger"  href="#">Delete</a>
+                                <a class="btn btn-danger"  href="deleteStudent.php?id=<? echo $student['id'] ?> name="delete_student_info">Delete</a>
                             </div>
                         </th>
                     </tr>
