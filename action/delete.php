@@ -1,7 +1,7 @@
 <?php
 require __DIR__. "/../config/database.php";
 
-// get student info after clciking edit btn
+// get student info after clciking delete btn
 if (isset($_GET['id'])) {
     $sId = (int)$_GET['id'];
 } else {
@@ -25,18 +25,24 @@ if ($sId == 0) {
     $student = mysqli_fetch_assoc($result);
     // close stmt
     mysqli_stmt_close($getData);
-
 }
 
+// deleting student info
+if (isset($_POST['delete_student'])) {
+    // store id to a var
+    $Id = (int)$_POST['id'];
+    //delete student via id 
+    $sqlDelete = "DELETE FROM students WHERE id = ?";
+    // prepare stmt
+    $deleteData = mysqli_prepare($conn,$sqlDelete);
+    // bind param
+    mysqli_stmt_bind_param($deleteData,'i',$Id);
+    // execute query
+    mysqli_stmt_execute($deleteData);
+    echo("student id = " . $Id . "is deleted");
+    // close stmt
+    mysqli_stmt_close($deleteData);
+}
 
-
-
-
-
-
-
-
-
-
-
+// close db connection
 mysqli_close($conn);

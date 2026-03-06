@@ -47,7 +47,7 @@ include("action/delete.php");
                     </div>
                     <div class="d-flex justify-content-end gap-3">
                         <a class="btn btn-outline-secondary" href="index.php">Cancel</a>
-                        <button class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
                     </div>
                 </form>
             </div>
