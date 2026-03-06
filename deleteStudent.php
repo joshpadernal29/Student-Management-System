@@ -1,3 +1,7 @@
+<?php
+include("action/delete.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +18,7 @@
         <div class="card shadow w-50 ">
             <div class="card-header">Are you sure you want to delete this Student?</div>
             <div class="card-body">
-                <form action="action/delete.php" method="get">
+                <form action="action/delete.php" method="post">
                     <input type="hidden" name="id" class="form-control" value="<?php echo $student['id']; ?>">
                     <div class="form-floating mb-3">
                         <input type="text" name="delete_student_id" class="form-control" id="floatingInput"
@@ -42,7 +46,7 @@
                         <label for="floatingSelect">Year Level</label>
                     </div>
                     <div class="d-flex justify-content-end gap-3">
-                        <button class="btn btn-outline-secondary">Cancel</button>
+                        <a class="btn btn-outline-secondary" href="index.php">Cancel</a>
                         <button class="btn btn-danger">Delete</button>
                     </div>
                 </form>
