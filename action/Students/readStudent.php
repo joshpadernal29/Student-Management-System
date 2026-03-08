@@ -1,5 +1,5 @@
 <?php
-require __DIR__. "/../config/database.php";
+require __DIR__. "/../../config/database.php";
 
 $sqlRead = "SELECT * FROM students";
 $students = [];

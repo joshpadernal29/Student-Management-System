@@ -1,7 +1,7 @@
 <?php
 // stop this code from running ntil the add student btn is clicked
 if (isset($_POST['add_student'])) {
-    require('config/database.php');
+    require __DIR__. "/../../config/database.php";
 
     // get data from addStudent page
     $student_id = $_POST['student_id'];

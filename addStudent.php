@@ -1,5 +1,5 @@
 <?php
-include("action/createStudent.php");
+include("action/Students/createStudent.php");
 ?>
 
 <!DOCTYPE html>

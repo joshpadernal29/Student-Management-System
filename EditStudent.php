@@ -1,5 +1,5 @@
 <?php
-include("action/edit.php");
+include("action/Students/edit.php");
 ?>
 
 <!DOCTYPE html>

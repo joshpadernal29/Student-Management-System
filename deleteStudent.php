@@ -1,5 +1,5 @@
 <?php
-include("action/delete.php");
+include("action/Students/delete.php");
 ?>
 
 <!DOCTYPE html>

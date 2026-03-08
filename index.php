@@ -1,5 +1,5 @@
 <?php
-require __DIR__. "../action/readStudent.php";
+require __DIR__. "../action/Students/readStudent.php";
 ?>
 
 <!DOCTYPE html>

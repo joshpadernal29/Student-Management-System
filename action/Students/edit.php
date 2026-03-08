@@ -1,6 +1,6 @@
 <?php
 // absolute  file path
-require __DIR__. "/../config/database.php";
+require __DIR__. "/../../config/database.php";
     
     // get id and parse to int (populate student info)
      if (isset($_GET['id'])) {

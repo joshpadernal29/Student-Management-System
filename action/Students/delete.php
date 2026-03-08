@@ -1,5 +1,5 @@
 <?php
-require __DIR__. "/../config/database.php";
+require __DIR__. "/../../config/database.php";
 
 // get student info after clciking delete btn
 if (isset($_GET['id'])) {
