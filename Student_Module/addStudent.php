@@ -1,5 +1,5 @@
 <?php
-include("action/Students/createStudent.php");
+require __DIR__. "/../action/Students/createStudent.php";
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ include("action/Students/createStudent.php");
                             <label for="floatingSelect">Year Level</label>
                         </div>
                         <div class="m-3 d-flex justify-content-end gap-3">
-                            <a class="btn btn-outline-danger" href="index.php">Cancel</a>
+                            <a class="btn btn-outline-danger" href="studentList.php">Cancel</a>
                             <button class="btn btn-primary" type="submit" name="add_student">Add Student</button>
                         </div>
                     </form>

@@ -1,5 +1,5 @@
 <?php
-include("action/Students/edit.php");
+require __DIR__. "/../action/Students/edit.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include("action/Students/edit.php");
         <div class="container p-3 d-flex justify-content-center">
             <div class="card shadow w-50 ">
                 <div class="card-body">
-                    <form action="action/edit.php" method="post">
+                    <form action="../action/Students/edit.php" method="post">
                         <h4>Edit Student info</h4>
                         <hr>
                         <input type="hidden" name="id" class="form-control" value="<?php echo $student['id']; ?>">
@@ -57,7 +57,7 @@ include("action/Students/edit.php");
                             <label for="floatingSelect">Year Level</label>
                         </div>
                         <div class="m-3 d-flex justify-content-end gap-3">
-                            <a class="btn btn-outline-danger" href="index.php">Cancel</a>
+                            <a class="btn btn-outline-danger" href="studentLsit.php">Cancel</a>
                             <button class="btn btn-primary" type="submit" name="update_student">Update Student
                                 info</button>
                         </div>

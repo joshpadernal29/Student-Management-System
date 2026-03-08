@@ -11,7 +11,7 @@ require __DIR__. "/../../config/database.php";
 
      // redirect to index if id = 0 (unable to access editstudent page via url)
      if ($sId == 0) {
-          header("Location: ../index.php");
+          header("Location: /../student_Module/studentList.php");
      } else {
      // get student info based on the id
         $sqlGet = "SELECT * FROM students WHERE id = ?";
@@ -50,10 +50,11 @@ require __DIR__. "/../../config/database.php";
 
           mysqli_stmt_close($updatedData);
 
-          // after updating data redirect back to index
-          header("Location: /../index.php");
+          // after updating data redirect back to studentList
+          header("Location: /../student_Module/studentList.php");
     }
 
 // close connection
 mysqli_close($conn);
+
 

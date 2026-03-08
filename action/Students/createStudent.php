@@ -26,8 +26,8 @@ if (isset($_POST['add_student'])) {
     // close statement
     mysqli_stmt_close($insertData);
 
-    // redirect to index after adding student
-    header("Location: ../index.php");
+    // redirect to Student list after adding student
+    header("Location: studentList.php");
 
     // close connection
     mysqli_close($conn);
