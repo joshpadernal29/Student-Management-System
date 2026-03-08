@@ -1,5 +1,5 @@
 <?php
-include("action/Students/delete.php");
+require __DIR__. "/../action/Students/delete.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include("action/Students/delete.php");
         <div class="card shadow w-50 ">
             <div class="card-header">Are you sure you want to delete this Student?</div>
             <div class="card-body">
-                <form action="action/delete.php" method="post">
+                <form action="/../action/Students/delete.php" method="post">
                     <input type="hidden" name="id" class="form-control" value="<?php echo $student['id']; ?>">
                     <div class="form-floating mb-3">
                         <input type="text" name="delete_student_id" class="form-control" id="floatingInput"
@@ -46,7 +46,7 @@ include("action/Students/delete.php");
                         <label for="floatingSelect">Year Level</label>
                     </div>
                     <div class="d-flex justify-content-end gap-3">
-                        <a class="btn btn-outline-secondary" href="index.php">Cancel</a>
+                        <a class="btn btn-outline-secondary" href="studentList.php">Cancel</a>
                         <button type="submit" class="btn btn-danger" name="delete_student">Delete</button>
                     </div>
                 </form>

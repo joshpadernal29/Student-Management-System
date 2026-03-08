@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 }
 
 if ($sId == 0) {
-    header("Location: ../index.php");
+    header("Location: /../student_Module/studentList.php");
 } else {
     // get student info based on the pk id and populate inputs
     $sqlGet = "SELECT * FROM students WHERE id = ?";
