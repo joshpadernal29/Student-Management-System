@@ -1,5 +1,8 @@
 <?php
 require __DIR__. "/../action/Students/readStudent.php";
+
+// include navbar header
+include("../includes/header.html");
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +18,7 @@ require __DIR__. "/../action/Students/readStudent.php";
 </head>
 
 <body>
-    <!--navbar-->
-    <nav class="navbar navbar-dark bg-dark navbar-nav">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                Student-Management-System
-            </a>
-        </div>
-    </nav>
-    <!--end of navbar-->
+    <!--main content-->
     <main>
         <div class="container mt-2">
             <h2>Student List</h2>

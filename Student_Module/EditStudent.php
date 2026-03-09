@@ -57,7 +57,7 @@ require __DIR__. "/../action/Students/edit.php";
                             <label for="floatingSelect">Year Level</label>
                         </div>
                         <div class="m-3 d-flex justify-content-end gap-3">
-                            <a class="btn btn-outline-danger" href="studentLsit.php">Cancel</a>
+                            <a class="btn btn-outline-danger" href="studentList.php">Cancel</a>
                             <button class="btn btn-primary" type="submit" name="update_student">Update Student
                                 info</button>
                         </div>
