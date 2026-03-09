@@ -1,8 +1,5 @@
 <?php
 require __DIR__. "/../action/Students/readStudent.php";
-
-// include navbar header
-include("../includes/header.html");
 ?>
 
 <!DOCTYPE html>
@@ -11,52 +8,114 @@ include("../includes/header.html");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Student List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <!--main content-->
-    <main>
-        <div class="container mt-2">
-            <h2>Student List</h2>
-            <a class="btn btn-primary" href="addStudent.php">+ Add Student</a>
+
+    <!-- HEADER -->
+    <?php include("../includes/header.html"); ?>
+    <!-- END HEADER -->
+
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- SIDEBAR -->
+            <?php include("../includes/sidebar.html"); ?>
+            <!-- END SIDEBAR -->
+
+
+            <!-- MAIN CONTENT -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <!-- PAGE TITLE -->
+                <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+                    <h2 class="mb-0">
+                        <i class="bi bi-people-fill me-2"></i>
+                        Student List
+                    </h2>
+                    <a class="btn btn-primary" href="addStudent.php">
+                        <i class="bi bi-person-plus-fill me-1"></i>
+                        Add Student
+                    </a>
+                </div>
+
+
+                <!-- SEARCH BAR -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Search student...">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- STUDENT TABLE -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Full Name</th>
+                                        <th>Course</th>
+                                        <th>Level</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <?php foreach($students as $student): ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $student['student_id']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $student['first_name'] . " " . $student['last_name']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $student['course']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $student['level']; ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn btn-sm btn-outline-primary"
+                                                href="EditStudent.php?id=<?php echo $student['id']; ?>">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                            <a class="btn btn-sm btn-outline-danger"
+                                                href="deleteStudent.php?id=<?php echo $student['id']; ?>">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- END MAIN -->
         </div>
-        <hr>
-        <div class="container">
-            <table class="table table-striped">
-                <thead>
-                    <th>Student ID</th>
-                    <th>Fullname</th>
-                    <th>Course</th>
-                    <th>Level</th>
-                    <th>Action</th>
-                </thead>
-                <tbody> 
-                    <!--php for each loop-->
-                    <?php foreach($students as $student): ?>
-                    <tr>  
-                        <th><?php echo $student['student_id']?></th>
-                        <th><?php echo $student['first_name'] . " " . $student['last_name']?></th>
-                        <th><?php echo $student['course']?></th>
-                        <th><?php echo $student['level']?></th>
-                        <th>
-                            <div class="btn-group" role="group">
-                                <a class="btn btn-primary" href="EditStudent.php?id=<?php echo $student['id'];?> name="edit_student_info">Edit</a>
-                                <a class="btn btn-danger"  href="deleteStudent.php?id=<?php echo $student['id'] ?> name="delete_student_info">Delete</a>
-                            </div>
-                        </th>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    </div>
+    <!-- FOOTER -->
+    <?php include("../includes/footer.html"); ?>
+    <!-- END FOOTER -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

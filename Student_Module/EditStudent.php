@@ -1,5 +1,8 @@
 <?php
 require __DIR__. "/../action/Students/edit.php";
+
+// include navbar header
+include("../includes/header.html");
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,8 @@
 <?php
 require __DIR__. "/../action/Students/delete.php";
+
+// include navbar header
+include("../includes/header.html");
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@ require __DIR__. "/../action/Students/delete.php";
 </head>
 
 <body>
-    <div class="container justify-content-center d-flex mt-5">
+    <div class="container justify-content-center d-flex mt-3">
         <div class="card shadow w-50 ">
             <div class="card-header">Are you sure you want to delete this Student?</div>
             <div class="card-body">
