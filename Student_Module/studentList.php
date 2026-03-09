@@ -1,5 +1,8 @@
 <?php
 require __DIR__. "/../action/Students/readStudent.php";
+
+// pagination logic
+include("../action/Students/pagination.php");
 ?>
 
 <!DOCTYPE html>
@@ -107,6 +110,33 @@ require __DIR__. "/../action/Students/readStudent.php";
                         </div>
                     </div>
                 </div>
+                <!--pagination -->
+                <nav aria-label="Page navigation example" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item <?php echo ($page_no <= 1) ? 'disabled' : ''; ?>">
+                            <a class="page-link shadow-sm px-3"
+                                href="<?php echo ($page_no > 1) ? '?page_no=' . $previous_page : '#'; ?>">
+                                Previous
+                            </a>
+                        </li>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                        <li class="page-item <?php echo ($page_no == $i) ? 'active' : ''; ?>">
+                            <a class="page-link shadow-sm" href="?page_no=<?php echo $i; ?>">
+                                <?php echo $i; ?>
+                            </a>
+                        </li>
+                        <?php endfor; ?>
+
+                        <li class="page-item <?php echo ($page_no >= $total_pages) ? 'disabled' : ''; ?>">
+                            <a class="page-link shadow-sm px-3"
+                                href="<?php echo ($page_no < $total_pages) ? '?page_no=' . $next_page : '#'; ?>">
+                                Next
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!--end of pagination-->
             </main>
             <!-- END MAIN -->
         </div>
